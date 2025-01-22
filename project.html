@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <h1>Search Data</h1>
+    <input type="search" id="searchInput" placeholder="Search for names" />
+
+    <p>Hamza</p>
+    <p>Javed</p>
+    <p>Ali</p>
+    <p>Asghar</p>
+    <p>Alice</p>
+    <h3>here is h1 <span>..</span></h3>
+
+    <script>
+      //let btn = document.querySelector("button");
+      //let names = document.querySelectorAll("p");
+      let input = document.querySelector("input");
+      let span = document.querySelector("span");
+      //   let brakeNodeList = names.forEach((minName) => {
+      //     console.log(minName);
+      //   });
+
+      let data = [
+        { name: "Hamza" },
+        { name: "Javed" },
+        { name: "Ali" },
+        { name: "Asghar" },
+        { name: "Alice" },
+      ];
+
+      input.addEventListener("input", function (e) {
+        //span.innerHTML = e.target.value;
+        let oh = data.filter((x) => x.name.includes(e.target.value));
+
+        //span.innerHTML = oh.name;
+        span.innerHTML = oh[0].name;
+        span.style.backgroundColor = "pink";
+        span.style.fontFamily = "sans-serif";
+        if (input.value == "") {
+          span.innerHTML = "";
+        }
+      });
+    </script>
+  </body>
+</html>
